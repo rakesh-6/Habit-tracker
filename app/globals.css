@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Chart colours (stats page). Only chart marks use these: text never does. */
+:root {
+  --viz-accent: #2a78d6; /* the highlighted bar / the trend line */
+  --viz-context: #c3c2b7; /* the other, de-emphasised bars */
+  --viz-grid: #e1e0d9; /* hairline gridlines */
+  --viz-axis: #c3c2b7; /* the baseline */
+  --viz-good: #006300; /* "better than before" */
+  --viz-bad: #d03b3b; /* "worse than before" */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --viz-accent: #3987e5;
+    --viz-context: #52514e;
+    --viz-grid: #2c2c2a;
+    --viz-axis: #383835;
+    --viz-good: #0ca30c;
+    --viz-bad: #d03b3b;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
